@@ -8,14 +8,16 @@ const Form = (props) => {
 
   function handleSubmit(e){
     e.preventDefault();
+    props.setMyTeam( { ...props.myTeam.push(props.teamMember) } )
+  console.log('submitted: ', props.myTeam);
   }
-  
+
   return (
     <div className= 'formCont'>
-      {console.log(props.teamMember)}
       <form onSubmit= {e => handleSubmit(e)}>
+      {console.log('teamMember from form',props.teamMember)}
         <label>Full Name:  
-          <input value= {props.teamMember.fullName} onChange= {e => changeHandler(e)} name= 'fullName' placeholder= 'Name' type= 'text' />
+          <input value= {props.teamMember.name} onChange= {e => changeHandler(e)} name= 'name' placeholder= 'Name' type= 'text' />
         </label> 
 
         <label>Email:

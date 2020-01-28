@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Team = ({team}) => {
+const Team = (props) => {
+
   return (
     <div className= 'teamCont'>
-      {console.log('team from Team',team)}
       {
-        team.map( (ele, i) => {
+        props.team.map( (ele, i) => {
           return (
             <div key= {i} className= 'teamMemberCont'>
               <h2><b>Name:</b> {ele.name}</h2>
@@ -15,6 +15,7 @@ const Team = ({team}) => {
           )
         } )
       }
+      
     </div>
   )
 }

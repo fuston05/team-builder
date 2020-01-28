@@ -6,16 +6,17 @@ import team from './components/Team/teamData';
 import './App.css';
 
 function App() {
+  const [myTeam, setMyTeam]= useState(team);
   const [teamMember, setTeamMember]= useState({
-    fullName: '',
+    name: '',
     email: '',
     role: ''
   })
 
   return (
     <div className="App">
-      <Form  teamMember= {teamMember} setTeamMember= {setTeamMember}/>
-      <Team team={team} />
+      <Form myTeam={myTeam} setMyTeam= {setMyTeam} teamMember= {teamMember} setTeamMember= {setTeamMember}/>
+      <Team team={myTeam} />
     </div>
   );
 }
