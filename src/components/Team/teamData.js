@@ -1,4 +1,4 @@
-team=[
+const team=[
   {
     name: 'Tommy Tommerson',
     email: 'ttommerson@email.com',
