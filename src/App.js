@@ -11,7 +11,7 @@ function App() {
   const [memberToEdit, setMemberToEdit]= useState({});
 
   function editMember(e){
-    console.log('index: ',e.target.attributes.index.value);
+    // console.log('index: ',e.target.attributes.index.value);
     let memberIndex= e.target.attributes.index.value;
     setMemberToEdit(myTeam[memberIndex]);
   }//end func

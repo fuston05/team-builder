@@ -6,7 +6,7 @@ const Team = (props) => {
         <h2>Add team member</h2>
       )
     }//end if !props
-
+    console.log('teamMember from Team.js: ', props.teamMember);
   return (
     <div className= 'teamCont'>
       {

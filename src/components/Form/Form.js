@@ -9,18 +9,21 @@ const Form = (props) => {
     role: ''
   })
 
-  if( props.memberToEdit === {} ){
-    setTeamMember(...teamMember, props.memberToEdit);
-    
-  }
-
   function changeHandler(e) {
     setTeamMember({ ...teamMember, [e.target.name]: e.target.value });
     console.log('teamMember from changeHandler: ',teamMember);
   }
 
   useEffect(() => {
+    if(teamMember){
+      console.log('use effect "if statement" fired!');
+      let edit= props.memberToEdit;
+      setTeamMember( { ...teamMember, ...edit });
+      console.log('Edit var: ', edit);
+    }//end if
+    console.log('use effect fired!');
     
+    console.log('member to edit: ', props.memberToEdit);
   }, [props.memberToEdit])
 
   function handleSubmit(e) {
@@ -32,10 +35,11 @@ const Form = (props) => {
       role: ''
     })
   }
+  console.log('team member form state: ', teamMember);
   // console.log('memberToEdit: ',props.memberToEdit);
   return (
     <div className='mainCont'>
-
+      <p>{teamMember.name}</p>
       <form onSubmit={e => handleSubmit(e)}>
         <label>Full Name:
           <input value={teamMember.name} onChange={e => changeHandler(e)} name='name' placeholder='Name' type='text' />
@@ -50,7 +54,7 @@ const Form = (props) => {
         </label>
         <input type='submit' />
       </form>
-      <Team editMember= {props.editMember} team= {props.team} />
+      <Team teamMember= {teamMember} editMember= {props.editMember} team= {props.team} />
     </div>
   )
 }
