@@ -1,34 +1,56 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Team from '../Team/Team';
 
 const Form = (props) => {
- 
-  function changeHandler(e){
-    props.setTeamMember( { ...props.teamMember, [e.target.name]: e.target.value } );
+  
+  const [teamMember, setTeamMember]= useState({
+    name: '',
+    email: '',
+    role: ''
+  })
+
+  if( props.memberToEdit === {} ){
+    setTeamMember(...teamMember, props.memberToEdit);
+    
   }
 
-  function handleSubmit(e){
+  function changeHandler(e) {
+    setTeamMember({ ...teamMember, [e.target.name]: e.target.value });
+    console.log('teamMember from changeHandler: ',teamMember);
+  }
+
+  useEffect(() => {
+    
+  }, [props.memberToEdit])
+
+  function handleSubmit(e) {
     e.preventDefault();
-    props.setMyTeam( { ...props.myTeam.push(props.teamMember) } )
-  console.log('submitted: ', props.myTeam);
+    props.setMyTeam([ ...props.team, teamMember ])
+    setTeamMember({
+      name: '',
+      email: '',
+      role: ''
+    })
   }
-
+  // console.log('memberToEdit: ',props.memberToEdit);
   return (
-    <div className= 'formCont'>
-      <form onSubmit= {e => handleSubmit(e)}>
-      {console.log('teamMember from form',props.teamMember)}
-        <label>Full Name:  
-          <input value= {props.teamMember.name} onChange= {e => changeHandler(e)} name= 'name' placeholder= 'Name' type= 'text' />
-        </label> 
+    <div className='mainCont'>
 
-        <label>Email:
-          <input value= {props.teamMember.email} onChange= {e => changeHandler(e)} name= 'email' placeholder= 'Email' type= 'email' />
+      <form onSubmit={e => handleSubmit(e)}>
+        <label>Full Name:
+          <input value={teamMember.name} onChange={e => changeHandler(e)} name='name' placeholder='Name' type='text' />
         </label>
 
-        <label>Role: 
-          <input value= {props.teamMember.role} onChange= {e => changeHandler(e)} name= 'role' placeholder= 'Company Role' type= 'text' />
-        </label> 
-        <input type= 'submit' />      
+        <label>Email:
+          <input value={teamMember.email} onChange={e => changeHandler(e)} name='email' placeholder='Email' type='email' />
+        </label>
+
+        <label>Role:
+          <input value={teamMember.role} onChange={e => changeHandler(e)} name='role' placeholder='Company Role' type='text' />
+        </label>
+        <input type='submit' />
       </form>
+      <Team editMember= {props.editMember} team= {props.team} />
     </div>
   )
 }

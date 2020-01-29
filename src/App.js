@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import Form from './components/Form/Form';
-import Team from './components/Team/Team';
-import team from './components/Team/teamData';
+
 //styles
 import './App.css';
 
+
+
 function App() {
-  const [myTeam, setMyTeam]= useState(team);
-  const [teamMember, setTeamMember]= useState({
-    name: '',
-    email: '',
-    role: ''
-  })
+  const [myTeam, setMyTeam]= useState([]);
+  const [memberToEdit, setMemberToEdit]= useState({});
+
+  function editMember(e){
+    console.log('index: ',e.target.attributes.index.value);
+    let memberIndex= e.target.attributes.index.value;
+    setMemberToEdit(myTeam[memberIndex]);
+  }//end func
 
   return (
     <div className="App">
-      <Form myTeam={myTeam} setMyTeam= {setMyTeam} teamMember= {teamMember} setTeamMember= {setTeamMember}/>
-      <Team team={myTeam} />
+      <Form setMyTeam={setMyTeam} team={myTeam} setMemberToEdit= {setMemberToEdit} memberToEdit= {memberToEdit} editMember= {editMember} />
+      {/* <Team /> */}
     </div>
   );
 }
