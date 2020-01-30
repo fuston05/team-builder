@@ -1,10 +1,10 @@
-.teamCont{
+.teamCont {
   padding: 0 0 0 0;
   max-width: 100%;
   width: 70%;
 }
 
-.teamMemberCont{
+.teamMemberCont {
   border: 1px solid rgb(235, 231, 223);
   background-color: cornflowerBlue;
   padding: 1%;
@@ -16,22 +16,17 @@
   box-shadow: 2px 2px 4px #333;
 }
 
-h2{
+h2 {
   width: 70%;
-  text-align: center;  
+  text-align: center;
 }
 
-
-.teamCont h2{
+.teamCont h2 {
   width: 100%;
-  text-align: center;  
+  text-align: center;
 }
 
-.teamMemberCont p{
-
-}
-
-button{
+button {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -40,7 +35,7 @@ button{
   border-radius: 5px;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
   opacity: 0.8;
 }

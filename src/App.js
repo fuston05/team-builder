@@ -4,7 +4,8 @@ import Form from './components/Form/Form';
 //styles
 import './App.css';
 
-const fakeData= [
+//used for testing and styling
+const fakeData = [
   {
     name: 'Scott Fuston',
     email: 'fuston@email.com',
@@ -56,7 +57,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form fakeData= {fakeData} setMyTeam={setMyTeam} team={myTeam} setMemberToEdit={setMemberToEdit} memberToEdit={memberToEdit} editMember={editMember} />
+      <Form fakeData={fakeData} setMyTeam={setMyTeam} team={myTeam} setMemberToEdit={setMemberToEdit} memberToEdit={memberToEdit} editMember={editMember} />
     </div>
   );
 }

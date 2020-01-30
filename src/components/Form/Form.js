@@ -31,7 +31,7 @@ const Form = (props) => {
     })
   }
 
-  function clearFields(){
+  function clearFields() {
     setTeamMember({
       name: '',
       email: '',
@@ -55,11 +55,11 @@ const Form = (props) => {
           <input value={teamMember.role} onChange={e => changeHandler(e)} name='role' placeholder='Company Role' type='text' />
         </label>
         <div>
-          <input value= 'Reset' type='button' onClick= {clearFields} />
+          <input value='Reset' type='button' onClick={clearFields} />
           <input type='submit' />
         </div>
       </form>
-      <Team fakeData= {props.fakeData} teamMember={teamMember} editMember={props.editMember} team={props.team} />
+      <Team fakeData={props.fakeData} teamMember={teamMember} editMember={props.editMember} team={props.team} />
     </div>
   )
 }
