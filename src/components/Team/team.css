@@ -1,0 +1,41 @@
+.teamCont {
+  padding: 0 0 0 0;
+  max-width: 100%;
+  width: 70%;
+}
+
+.teamMemberCont {
+  border: 1px solid rgb(235, 231, 223);
+  background-color: cornflowerBlue;
+  padding: 1%;
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto 2% auto;
+  box-shadow: 2px 2px 4px #333;
+}
+
+h2 {
+  width: 70%;
+  text-align: center;
+}
+
+.teamCont h2 {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  padding: 2px 15px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
