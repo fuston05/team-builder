@@ -4,6 +4,39 @@ import Form from './components/Form/Form';
 //styles
 import './App.css';
 
+const fakeData= [
+  {
+    name: 'Scott Fuston',
+    email: 'fuston@email.com',
+    role: 'CEO'
+  },
+  {
+    name: 'Harmoni Fuston',
+    email: 'harmoni@email.com',
+    role: 'District Manager'
+  },
+  {
+    name: 'Glenn Gill',
+    email: 'bobSanders@email.com',
+    role: 'Minion'
+  },
+  {
+    name: 'Honesty Gibson',
+    email: 'honesty@email.com',
+    role: 'Mini Minion'
+  },
+  {
+    name: 'Hope Twitty',
+    email: 'hope@email.com',
+    role: 'Minion Manager'
+  },
+  {
+    name: 'Todd Dawson',
+    email: 'todd@email.com',
+    role: 'Janitor'
+  }
+];
+
 function App() {
   const [myTeam, setMyTeam] = useState([]);
   const [memberToEdit, setMemberToEdit] = useState({});
@@ -23,8 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form setMyTeam={setMyTeam} team={myTeam} setMemberToEdit={setMemberToEdit} memberToEdit={memberToEdit} editMember={editMember} />
-      {/* <Team /> */}
+      <Form fakeData= {fakeData} setMyTeam={setMyTeam} team={myTeam} setMemberToEdit={setMemberToEdit} memberToEdit={memberToEdit} editMember={editMember} />
     </div>
   );
 }

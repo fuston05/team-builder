@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Team from '../Team/Team';
+import './form.css';
 
 const Form = (props) => {
 
@@ -30,9 +31,18 @@ const Form = (props) => {
     })
   }
 
+  function clearFields(){
+    setTeamMember({
+      name: '',
+      email: '',
+      role: ''
+    })
+  }
+
   return (
     <div className='mainCont'>
       <form onSubmit={e => handleSubmit(e)}>
+        <h3>Add/Edit Team Member</h3>
         <label>Full Name:
           <input value={teamMember.name} onChange={e => changeHandler(e)} name='name' placeholder='Name' type='text' />
         </label>
@@ -44,9 +54,12 @@ const Form = (props) => {
         <label>Role:
           <input value={teamMember.role} onChange={e => changeHandler(e)} name='role' placeholder='Company Role' type='text' />
         </label>
-        <input type='submit' />
+        <div>
+          <input value= 'Reset' type='button' onClick= {clearFields} />
+          <input type='submit' />
+        </div>
       </form>
-      <Team teamMember={teamMember} editMember={props.editMember} team={props.team} />
+      <Team fakeData= {props.fakeData} teamMember={teamMember} editMember={props.editMember} team={props.team} />
     </div>
   )
 }

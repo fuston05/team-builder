@@ -1,0 +1,40 @@
+.mainCont{
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  padding: 3% 0 0 0;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 30%
+}
+
+label{
+  font-size: 1.2rem;
+}
+
+input, input[type=submit]{
+  margin: 0 0 2% 10px;
+  padding: 3px;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+input[type=submit], input[type=button]{
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+input[type=submit]:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+input[type=button]:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
